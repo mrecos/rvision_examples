@@ -20,7 +20,7 @@ while(isTRUE(on)){
                        filter_by_convexity = FALSE,
                        filter_by_inertia = FALSE, min_threshold = 0)
 
-  cat(i,"-", blob$id, ",", blob$x, ",", blob$x, ",", blob$size, "\n")
+  # cat(i,"-", blob$id, ",", blob$x, ",", blob$x, ",", blob$size, "\n")
   new <- Sys.time()
 
   drawRectangle(img, blob$x[1] - 1 + blob$size[1]/2,
