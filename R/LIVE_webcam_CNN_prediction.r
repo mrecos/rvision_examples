@@ -1,5 +1,6 @@
 library("Rvision")
 library("dplyr")
+library("keras")
 
 
 # instantiate the model
