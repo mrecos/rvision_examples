@@ -6,7 +6,6 @@ my_stream <- stream(0)   # 0 will start your default webcam in general.
 on <- TRUE
 frames = 400
 frame  = 1
-# my_vid <- video("C:/Users/matthew.d.harris/Dropbox/R/Rvision/example_mp4/balloon1.3gp")
 old <- Sys.time()
 
 while(isTRUE(on)){

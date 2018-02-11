@@ -1,5 +1,8 @@
 library("Rvision")
 library("dplyr")
+library("reticulate")
+
+### Requires MNIST model trained on 28x28 grayscare MNIST dataset, see: KERAS_train_MNIST_CNN.r
 
 my_vid <- video("./Video/videoplayback.mp4")
 old <- Sys.time()

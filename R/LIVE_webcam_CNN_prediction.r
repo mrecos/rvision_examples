@@ -3,7 +3,7 @@ library("dplyr")
 
 
 # instantiate the model
-model <- application_resnet50(weights = 'imagenet')
+CNN_model <- application_resnet50(weights = 'imagenet')
 
 my_stream <- stream(0)
 newDisplay("Live test", 400, 400)
@@ -36,7 +36,7 @@ while(TRUE){
     img32_array <- image_to_array(as.matrix(img32))
     img32_array <- array_reshape(img32_array, c(1, dim(img32_array)))
     img32_proc <- imagenet_preprocess_input(img32_array)
-    preds <- model %>% predict(img32_proc)
+    preds <- CNN_model %>% predict(img32_proc)
     bb1 <- imagenet_decode_predictions(preds, top = 1)[[1]][,2:3]
     print(bb1)
 
