@@ -1,11 +1,12 @@
 library("Rvision")
 library("dplyr")
 library("magick")
+library("keras")
 
 ######## Not complete:
 # need to extract blob and predict on that, not the entire image
 
-# instantiate the model
+# instantiate the model, this may take a few moments...
 model <- application_resnet50(weights = 'imagenet')
 
 my_stream <- stream(0)
