@@ -1,4 +1,4 @@
-<img src="https://www.dropbox.com/s/m97zh7wtm2a1z4r/gidget.jpg??raw=1" width="100" height="200" />
+<img src="https://www.dropbox.com/s/m97zh7wtm2a1z4r/gidget.jpg?raw=1" width="100" height="200" />
 
 
 # Examples of using the Rvision package
