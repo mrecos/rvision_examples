@@ -4,7 +4,7 @@ library(keras)
 
 batch_size <- 128
 num_classes <- 10
-epochs <- 6
+epochs <- 5
 
 # Input image dimensions
 img_rows <- 28
@@ -34,10 +34,10 @@ cat(nrow(x_test), 'test samples\n')
 y_train <- to_categorical(y_train, num_classes)
 y_test <- to_categorical(y_test, num_classes)
 
-# Define Model -----------------------------------------------------------
+# Define MNIST_model -----------------------------------------------------------
 
-# Define model
-model <- keras_model_sequential() %>%
+# Define MNIST_model
+MNIST_model <- keras_MNIST_model_sequential() %>%
   layer_conv_2d(filters = 32, kernel_size = c(3,3), activation = 'relu',
                 input_shape = input_shape) %>% 
   layer_conv_2d(filters = 64, kernel_size = c(3,3), activation = 'relu') %>% 
@@ -48,21 +48,19 @@ model <- keras_model_sequential() %>%
   layer_dropout(rate = 0.5) %>% 
   layer_dense(units = num_classes, activation = 'softmax')
 
-# Compile model
-model %>% compile(
+# Compile MNIST_model
+MNIST_model %>% compile(
   loss = loss_categorical_crossentropy,
   optimizer = optimizer_adadelta(),
   metrics = c('accuracy')
 )
 
-# Train model
-model %>% fit(
+# Train MNIST_model
+MNIST_model %>% fit(
   x_train, y_train,
   batch_size = batch_size,
   epochs = epochs,
   validation_split = 0.2
 )
 
-dim(imgx1) <- c(28,28,1)
-dim(imgx1) <- c(1,28,28,1)
-model %>% predict(imgx1)
+MNIST_model %>% evaluate(x_test,y_test)
