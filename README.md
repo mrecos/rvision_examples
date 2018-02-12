@@ -19,5 +19,6 @@ There is still a ton of work to be done here and these examples are simplistic, 
 *   LIVE_webcam_CNN_prediction.r - ResNet50 CNN classification of video frames
 *   LIVE_webcam_blob_detection.r - object tracking from webcam
 *   KERAS_train_MNIST_CNN.r - script to train MNIST CNN with Keras (from Keras examples)
+*   LIVE_webcam_MNIST_CNN_predict.r - webcam stream with MNIST trained model - experimental...
 
 
