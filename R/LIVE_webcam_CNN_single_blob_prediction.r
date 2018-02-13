@@ -35,7 +35,7 @@ while(TRUE){
     #                 blob$x[i] - 1 - blob$size[i]/2,
     #                 blob$y[i] - 1 - blob$size[i]/2, thickness = 2)
     # }
-    
+    img_no_blob <- img # copy of image without annotated bounding box for prediction
     bbb = 10
     x1 = blob$x[1] + bbb + blob$size[1]/2
     y1 = blob$y[1] + bbb + blob$size[1]/2
@@ -49,7 +49,7 @@ while(TRUE){
     # image.default(blob1_t[x2:x1,y2:y1])
     # blob1_bb <- blob1_img[x2:x1,y2:y1,]
     
-    img32 <- resize(img, 224,224)
+    img32 <- resize(img_no_blob, 224,224)
     img32_array <- image_to_array(as.matrix(img32))
     img32_array <- array_reshape(img32_array, c(1, dim(img32_array)))
     img32_proc <- imagenet_preprocess_input(img32_array)
